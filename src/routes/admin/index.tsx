@@ -167,10 +167,58 @@ function AddProductTab({
 
   const cat = categories.find((c) => c.slug === categorySlug);
 
+  const MAX_IMAGES = 4;
+  const MAX_FILE_MB = 8; // max MB per image
+
   const handleImages = async (e: React.ChangeEvent<HTMLInputElement>) => {
-    const files = Array.from(e.target.files ?? []).slice(0, 5 - images.length);
-    const b64s = await Promise.all(files.map(fileToBase64));
-    setImages((prev) => [...prev, ...b64s].slice(0, 5));
+    const files = Array.from(e.target.files ?? []).slice(
+      0,
+      MAX_IMAGES - images.length,
+    );
+
+    if (files.length === 0) return;
+
+    // Check file sizes
+    const oversized = files.filter(
+      (f) => f.size > MAX_FILE_MB * 1024 * 1024,
+    );
+    if (oversized.length > 0) {
+      Swal.fire({
+        icon: "warning",
+        title: "Image too large",
+        text: `Max size is ${MAX_FILE_MB}MB per image. ${oversized.map((f) => f.name).join(", ")} exceeded the limit.`,
+        confirmButtonColor: "#000",
+      });
+      return;
+    }
+
+    // Show uploading feedback
+    Swal.fire({
+      title: "Uploading images...",
+      text: `Processing ${files.length} image${files.length > 1 ? "s" : ""}`,
+      allowOutsideClick: false,
+      allowEscapeKey: false,
+      didOpen: () => Swal.showLoading(),
+    });
+
+    try {
+      const b64s = await Promise.all(files.map(fileToBase64));
+      setImages((prev) => [...prev, ...b64s].slice(0, MAX_IMAGES));
+      Swal.fire({
+        icon: "success",
+        title: `${files.length} image${files.length > 1 ? "s" : ""} uploaded successfully!`,
+        timer: 1200,
+        showConfirmButton: false,
+      });
+    } catch {
+      Swal.fire({
+        icon: "error",
+        title: "Upload failed",
+        confirmButtonColor: "#000",
+      });
+    }
+    // Reset input so same file can be re-selected
+    if (fileRef.current) fileRef.current.value = "";
   };
 
   const removeImage = (i: number) =>
@@ -301,7 +349,7 @@ function AddProductTab({
       {/* Image upload */}
       <div>
         <label className="mb-2 block text-xs uppercase tracking-[0.25em] text-muted-foreground">
-          Images (max 5) — first image is the main card image
+          Images (max 4) — first image is the main card image
         </label>
         {images.length > 0 && (
           <div className="mb-3 flex gap-2 flex-wrap">
@@ -310,9 +358,31 @@ function AddProductTab({
                 key={i}
                 className="relative h-20 w-16 overflow-hidden border border-border bg-secondary"
               >
-                <img src={img} alt="" className="h-full w-full object-cover" />
+                {/* Click to view full size */}
+                <button
+                  type="button"
+                  onClick={() =>
+                    Swal.fire({
+                      imageUrl: img,
+                      imageAlt: `Image ${i + 1}`,
+                      showConfirmButton: false,
+                      showCloseButton: true,
+                      width: "auto",
+                      padding: "1rem",
+                      background: "#fff",
+                    })
+                  }
+                  className="h-full w-full"
+                  title="Click to view full size"
+                >
+                  <img
+                    src={img}
+                    alt=""
+                    className="h-full w-full object-cover transition-opacity hover:opacity-80"
+                  />
+                </button>
                 {i === 0 && (
-                  <span className="absolute bottom-0 left-0 right-0 bg-primary/80 py-0.5 text-center text-[8px] uppercase tracking-wider text-primary-foreground">
+                  <span className="pointer-events-none absolute bottom-0 left-0 right-0 bg-primary/80 py-0.5 text-center text-[8px] uppercase tracking-wider text-primary-foreground">
                     Main
                   </span>
                 )}
@@ -327,14 +397,14 @@ function AddProductTab({
             ))}
           </div>
         )}
-        {images.length < 5 && (
+        {images.length < MAX_IMAGES && (
           <button
             type="button"
             onClick={() => fileRef.current?.click()}
             className="flex items-center gap-2 border border-dashed border-border px-4 py-3 text-xs uppercase tracking-[0.25em] text-muted-foreground hover:border-primary hover:text-foreground transition-colors"
           >
             <Upload className="h-4 w-4" strokeWidth={1.5} /> Upload Images (
-            {images.length}/5)
+            {images.length}/{MAX_IMAGES}) — max {MAX_FILE_MB}MB each
           </button>
         )}
         <input

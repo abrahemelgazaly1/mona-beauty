@@ -13,38 +13,21 @@ type Ctx = {
 
 const ProductsCtx = createContext<Ctx | null>(null);
 
-function mergeWithStatic(apiProducts: Product[]): Product[] {
-  const staticMap = new Map(staticProducts.map((p) => [p.id, p]));
-  return apiProducts.map((p) => {
-    const s = staticMap.get(p.id);
-    const images =
-      p.images?.length &&
-      (p.images[0].startsWith("data:") || p.images[0].includes("/assets/"))
-        ? p.images[0].startsWith("data:")
-          ? p.images
-          : (s?.images ?? p.images)
-        : (s?.images ?? p.images);
-    return { ...p, images, usage: p.usage || s?.usage || "" };
-  });
-}
-
 export function ProductsProvider({ children }: { children: ReactNode }) {
   const qc = useQueryClient();
   const { data, isLoading } = useQuery({
     queryKey: ["products"],
     queryFn: fetchProducts,
     staleTime: 30_000,
-    retry: 1,
+    retry: 2,
     placeholderData: staticProducts,
   });
 
+  // Use API products as-is — they are the source of truth
+  // Fall back to static only if API completely fails
   const products = useMemo(() => {
-    if (!data) return staticProducts;
-    try {
-      return mergeWithStatic(data);
-    } catch {
-      return staticProducts;
-    }
+    if (!data || data.length === 0) return staticProducts;
+    return data;
   }, [data]);
 
   const value = useMemo(
