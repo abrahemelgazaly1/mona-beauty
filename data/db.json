@@ -1,0 +1,137 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "name": "Silk Repair Shampoo",
+      "category": "Hair Care",
+      "categorySlug": "hair-care",
+      "price": 320,
+      "images": ["/src/assets/p1.jpg", "/src/assets/p2.jpg", "/src/assets/p3.jpg"],
+      "description": "A nourishing shampoo that gently cleanses while restoring softness and shine to damaged hair.",
+      "usage": "Apply a small amount to wet hair. Massage into scalp, then rinse thoroughly. Follow with conditioner.",
+      "soldOut": false
+    },
+    {
+      "id": "2",
+      "name": "Radiance Hair Serum",
+      "category": "Hair Care",
+      "categorySlug": "hair-care",
+      "price": 450,
+      "images": ["/src/assets/p2.jpg", "/src/assets/p3.jpg", "/src/assets/p4.jpg"],
+      "description": "Lightweight serum that tames frizz and adds mirror-like shine to every strand.",
+      "usage": "Warm 2–3 drops between palms and smooth through damp or dry hair, avoiding the roots.",
+      "soldOut": false
+    },
+    {
+      "id": "3",
+      "name": "Velvet Matte Lipstick",
+      "category": "Makeup",
+      "categorySlug": "makeup",
+      "price": 280,
+      "images": ["/src/assets/p3.jpg", "/src/assets/p4.jpg", "/src/assets/p5.jpg"],
+      "description": "A creamy matte lipstick with 12-hour wear and rich, buildable color.",
+      "usage": "Apply directly to lips. Blot with tissue for a softer finish.",
+      "soldOut": false
+    },
+    {
+      "id": "4",
+      "name": "Hydra Glow Cream",
+      "category": "Skincare",
+      "categorySlug": "skincare",
+      "price": 520,
+      "images": ["/src/assets/p4.jpg", "/src/assets/p5.jpg", "/src/assets/p1.jpg"],
+      "description": "72-hour hydration cream infused with hyaluronic acid for a plump, dewy complexion.",
+      "usage": "Apply morning and evening to clean skin, gently pressing into face and neck.",
+      "soldOut": false
+    },
+    {
+      "id": "5",
+      "name": "Noir Eau de Parfum",
+      "category": "Fragrance",
+      "categorySlug": "fragrance",
+      "price": 780,
+      "images": ["/src/assets/p5.jpg", "/src/assets/p1.jpg", "/src/assets/p2.jpg"],
+      "description": "A sophisticated blend of bergamot, jasmine, and warm woods.",
+      "usage": "Spray onto pulse points: wrists, neck, and behind the ears.",
+      "soldOut": false
+    },
+    {
+      "id": "6",
+      "name": "Deep Repair Mask",
+      "category": "Hair Care",
+      "categorySlug": "hair-care",
+      "price": 380,
+      "images": ["/src/assets/p4.jpg", "/src/assets/p5.jpg", "/src/assets/p1.jpg"],
+      "description": "Intensive weekly treatment for dry, chemically-treated hair.",
+      "usage": "Apply to damp hair, leave for 10 minutes, then rinse thoroughly.",
+      "soldOut": false
+    },
+    {
+      "id": "7",
+      "name": "Precision Eyeliner",
+      "category": "Makeup",
+      "categorySlug": "makeup",
+      "price": 220,
+      "images": ["/src/assets/p3.jpg", "/src/assets/p4.jpg", "/src/assets/p5.jpg"],
+      "description": "Waterproof liquid liner with a fine-tip brush for effortless precision.",
+      "usage": "Draw along lash line from inner to outer corner. Allow to dry fully.",
+      "soldOut": false
+    },
+    {
+      "id": "8",
+      "name": "Vitamin C Serum",
+      "category": "Skincare",
+      "categorySlug": "skincare",
+      "price": 480,
+      "images": ["/src/assets/p2.jpg", "/src/assets/p3.jpg", "/src/assets/p4.jpg"],
+      "description": "Brightening serum that evens skin tone and boosts natural radiance.",
+      "usage": "Apply 3–4 drops to clean skin every morning before moisturizer.",
+      "soldOut": false
+    },
+    {
+      "id": "9",
+      "name": "Rose Musk Perfume",
+      "category": "Fragrance",
+      "categorySlug": "fragrance",
+      "price": 690,
+      "images": ["/src/assets/p5.jpg", "/src/assets/p1.jpg", "/src/assets/p2.jpg"],
+      "description": "Delicate rose petals meet soft musk in this feminine signature scent.",
+      "usage": "Spray lightly onto pulse points.",
+      "soldOut": false
+    },
+    {
+      "id": "10",
+      "name": "Ceramic Round Brush",
+      "category": "Styling Tools",
+      "categorySlug": "tools",
+      "price": 340,
+      "images": ["/src/assets/p1.jpg", "/src/assets/p2.jpg", "/src/assets/p3.jpg"],
+      "description": "Professional-grade ceramic brush for smooth, salon-quality blowouts.",
+      "usage": "Use on damp hair while blow-drying, rolling from mid-lengths to ends.",
+      "soldOut": false
+    },
+    {
+      "id": "11",
+      "name": "Argan Oil Elixir",
+      "category": "Hair Care",
+      "categorySlug": "hair-care",
+      "price": 410,
+      "images": ["/src/assets/p2.jpg", "/src/assets/p3.jpg", "/src/assets/p4.jpg"],
+      "description": "Pure argan oil that deeply nourishes and softens all hair types.",
+      "usage": "Apply 2–3 drops to ends of dry or damp hair.",
+      "soldOut": false
+    },
+    {
+      "id": "12",
+      "name": "Bronzing Powder",
+      "category": "Makeup",
+      "categorySlug": "makeup",
+      "price": 310,
+      "images": ["/src/assets/p4.jpg", "/src/assets/p5.jpg", "/src/assets/p1.jpg"],
+      "description": "Silky bronzer for a sun-kissed, natural-looking glow.",
+      "usage": "Sweep across cheekbones, forehead, and jawline with a large brush.",
+      "soldOut": false
+    }
+  ],
+  "orders": []
+}
