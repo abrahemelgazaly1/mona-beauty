@@ -35,7 +35,7 @@ import type { OrderStatus } from "@/lib/constants";
 import Swal from "sweetalert2";
 
 export const Route = createFileRoute("/admin/")({
-  head: () => ({ meta: [{ title: "Admin — MONA BEAUTY" }] }),
+  head: () => ({ meta: [{ title: "Admin — Doctor Cosmetics" }] }),
   beforeLoad: () => {
     // Block direct URL access if not logged in
     if (typeof window !== "undefined" && !localStorage.getItem("admin_token")) {
@@ -87,7 +87,7 @@ function AdminDashboard() {
       <header className="sticky top-0 z-50 border-b border-border bg-background/90 backdrop-blur-xl">
         <div className="mx-auto flex h-14 max-w-6xl items-center justify-between px-4 sm:px-6">
           <span className="font-display text-lg tracking-[0.2em] sm:text-xl">
-            MONA BEAUTY{" "}
+            DOCTOR COSMETICS{" "}
             <span className="text-xs font-light tracking-[0.3em] text-muted-foreground">
               ADMIN
             </span>

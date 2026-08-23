@@ -16,10 +16,10 @@ export const Route = createFileRoute("/category/$slug")({
   },
   head: ({ loaderData }) => ({
     meta: [
-      { title: `${loaderData?.cat.name ?? "Category"} — MONA BEAUTY` },
+      { title: `${loaderData?.cat.name ?? "Category"} — Doctor Cosmetics` },
       {
         name: "description",
-        content: `Shop ${loaderData?.cat.name ?? "our"} at Mona Beauty.`,
+        content: `Shop ${loaderData?.cat.name ?? "our"} at Doctor Cosmetics.`,
       },
     ],
   }),

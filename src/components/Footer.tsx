@@ -11,7 +11,7 @@ export function Footer() {
           {/* Brand */}
           <div className="md:col-span-2">
             <h3 className="font-display text-2xl tracking-[0.25em]">
-              MONA BEAUTY
+              DOCTOR COSMETICS
             </h3>
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-muted-foreground">
               {t("footer_desc")}
@@ -81,7 +81,7 @@ export function Footer() {
         </div>
 
         <div className="mt-12 border-t border-border pt-6 text-center text-xs tracking-widest text-muted-foreground">
-          © {new Date().getFullYear()} MONA BEAUTY — {t("footer_rights")}
+          © {new Date().getFullYear()} DOCTOR COSMETICS — {t("footer_rights")}
         </div>
       </div>
     </footer>

@@ -55,7 +55,7 @@ function Home() {
     {
       name: "Nour A.",
       rating: 5,
-      text: "I've been buying from Mona Beauty for a year now. The quality is always consistent and delivery is fast.",
+      text: "I've been buying from Doctor Cosmetics for a year now. The quality is always consistent and delivery is fast.",
     },
     {
       name: "Layla K.",
@@ -77,7 +77,7 @@ function Home() {
       <section className="relative h-[calc(100vh-5rem)] min-h-[640px] w-full overflow-hidden bg-primary">
         <img
           src={heroImg}
-          alt="MONA BEAUTY"
+          alt="Doctor Cosmetics"
           width={1920}
           height={1280}
           className="absolute inset-0 h-full w-full animate-zoom-in object-cover opacity-90"
@@ -122,7 +122,7 @@ function Home() {
             </div>
             <Link
               to="/products"
-              className="group inline-flex items-center gap-4 border border-primary-foreground/40 bg-transparent px-8 py-5 text-xs uppercase tracking-[0.35em] text-primary-foreground backdrop-blur-sm transition-all duration-500 hover:bg-primary-foreground hover:text-primary"
+              className="group inline-flex items-center gap-4 border-2 border-primary-foreground bg-primary-foreground px-10 py-5 text-xs uppercase tracking-[0.35em] text-primary font-medium transition-all duration-500 hover:bg-transparent hover:text-primary-foreground hover:border-primary-foreground/40 hover:scale-105"
             >
               {t("hero_shop")}
               <span className="inline-block h-px w-8 bg-current transition-all duration-500 group-hover:w-14" />

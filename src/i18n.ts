@@ -1,5 +1,5 @@
-// Translation system for MONA BEAUTY
-// Brand name "MONA BEAUTY" is never translated
+// Translation system for Doctor Cosmetics
+// Brand name "Doctor Cosmetics" is never translated
 
 export type Lang = "en" | "ar";
 
@@ -36,7 +36,7 @@ export const translations = {
     about_label: "Our Story",
     about_title: "A quiet obsession with craft.",
     about_p1:
-      "Mona Beauty specialises in premium hair care — products chosen for real results, tested in real hands, and built for everyday use.",
+      "Doctor Cosmetics specialises in premium hair care — products chosen for real results, tested in real hands, and built for everyday use.",
     about_p2:
       "From nourishing shampoos to finishing serums, every item in our collection is selected with one goal: hair that looks and feels its best.",
     about_founded: "Founded",
@@ -237,7 +237,7 @@ export const translations = {
     about_label: "قصتنا",
     about_title: "شغف هادئ بالصنعة.",
     about_p1:
-      "تتخصص Mona Beauty في عناية الشعر الفاخرة — منتجات تُختار لنتائج حقيقية، وتُختبر بأيدٍ حقيقية، وتُصنع للاستخدام اليومي.",
+      "تتخصص Doctor Cosmetics في عناية الشعر الفاخرة — منتجات تُختار لنتائج حقيقية، وتُختبر بأيدٍ حقيقية، وتُصنع للاستخدام اليومي.",
     about_p2:
       "من الشامبوهات المغذية إلى السيروم النهائي، كل منتج في مجموعتنا يُختار بهدف واحد: شعر يبدو ويُحسّ بأفضل حال.",
     about_founded: "تأسست",

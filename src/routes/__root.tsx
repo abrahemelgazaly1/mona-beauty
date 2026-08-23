@@ -91,7 +91,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       meta: [
         { charSet: "utf-8" },
         { name: "viewport", content: "width=device-width, initial-scale=1" },
-        { title: "MONA BEAUTY — Hair & Beauty Essentials" },
+        { title: "Doctor Cosmetics — Hair & Beauty Essentials" },
         {
           name: "description",
           content:
@@ -99,7 +99,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         },
         {
           property: "og:title",
-          content: "MONA BEAUTY — Hair & Beauty Essentials",
+          content: "Doctor Cosmetics — Hair & Beauty Essentials",
         },
         {
           property: "og:description",

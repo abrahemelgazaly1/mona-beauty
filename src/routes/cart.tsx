@@ -8,7 +8,7 @@ import { DELIVERY_FEE } from "@/lib/constants";
 import { useLang } from "@/context/LangContext";
 
 export const Route = createFileRoute("/cart")({
-  head: () => ({ meta: [{ title: "Cart — MONA BEAUTY" }] }),
+  head: () => ({ meta: [{ title: "Cart — Doctor Cosmetics" }] }),
   component: CartPage,
 });
 

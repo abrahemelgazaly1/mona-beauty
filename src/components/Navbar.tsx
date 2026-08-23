@@ -2,7 +2,6 @@ import { Link } from "@tanstack/react-router";
 import { ShoppingBag } from "lucide-react";
 import { useCart } from "@/context/CartContext";
 import { useLang } from "@/context/LangContext";
-import logoImg from "@/assets/logo.jpg";
 
 export function Navbar() {
   const { cartCount } = useCart();
@@ -13,24 +12,19 @@ export function Navbar() {
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6">
 
         {/*
-          Always LTR inside: logo on the physical LEFT, name to its right.
+          Always LTR inside: name on the physical LEFT, cart on the right.
           In RTL page the whole navbar flips, so we force ltr here
-          so logo stays on the left and cart stays on the right.
+          so name stays on the left and cart stays on the right.
         */}
         <div className="flex w-full items-center justify-between" dir="ltr">
 
-          {/* Logo + Brand name */}
+          {/* Brand name only */}
           <Link
             to="/"
-            className="flex flex-shrink-0 items-center gap-3 transition-opacity hover:opacity-70"
+            className="flex-shrink-0 transition-opacity hover:opacity-70"
           >
-            <img
-              src={logoImg}
-              alt="MONA BEAUTY"
-              className="h-10 w-10 shrink-0 rounded-full object-cover sm:h-11 sm:w-11"
-            />
             <span className="whitespace-nowrap font-display tracking-[0.2em] text-xl sm:text-2xl md:text-3xl">
-              MONA<span className="font-light"> BEAUTY</span>
+              DOCTOR<span className="font-light"> COSMETICS</span>
             </span>
           </Link>
 

@@ -5,7 +5,7 @@ import { adminLogin } from "@/lib/api";
 import Swal from "sweetalert2";
 
 export const Route = createFileRoute("/admin/login")({
-  head: () => ({ meta: [{ title: "Admin Login — MONA BEAUTY" }] }),
+  head: () => ({ meta: [{ title: "Admin Login — Doctor Cosmetics" }] }),
   beforeLoad: () => {
     // If already logged in, go straight to admin
     if (typeof window !== "undefined" && localStorage.getItem("admin_token")) {
@@ -49,7 +49,7 @@ function AdminLogin() {
             <Sparkles className="h-6 w-6" strokeWidth={1.25} />
           </div>
           <h1 className="mt-4 font-display text-3xl tracking-[0.2em]">
-            MONA BEAUTY
+            DOCTOR COSMETICS
           </h1>
           <p className="mt-2 text-xs uppercase tracking-[0.3em] text-muted-foreground">
             Admin Dashboard

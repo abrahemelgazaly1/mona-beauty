@@ -14,7 +14,7 @@ import { createOrder } from "@/lib/api";
 import Swal from "sweetalert2";
 
 export const Route = createFileRoute("/checkout")({
-  head: () => ({ meta: [{ title: "Checkout — MONA BEAUTY" }] }),
+  head: () => ({ meta: [{ title: "Checkout — Doctor Cosmetics" }] }),
   component: CheckoutPage,
 });
 

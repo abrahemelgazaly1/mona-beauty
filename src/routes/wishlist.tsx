@@ -9,7 +9,7 @@ import { products } from "@/data/products";
 import { useLang } from "@/context/LangContext";
 
 export const Route = createFileRoute("/wishlist")({
-  head: () => ({ meta: [{ title: "Wishlist — MONA BEAUTY" }] }),
+  head: () => ({ meta: [{ title: "Wishlist — Doctor Cosmetics" }] }),
   component: WishlistPage,
 });
 
