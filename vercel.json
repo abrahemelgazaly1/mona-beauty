@@ -1,6 +1,8 @@
 {
   "buildCommand": "npm run build",
   "outputDirectory": ".output/public",
+  "installCommand": "npm install --legacy-peer-deps",
+  "framework": null,
   "functions": {
     "api/**/*.js": {
       "maxDuration": 30

@@ -25,6 +25,7 @@ export default async function handler(req, res) {
         images: body.images || [],
         description: body.description || "",
         usage: body.usage || "",
+        productComponents: body.productComponents || "",
         soldOut: false,
       });
       return json(res, 201, product);

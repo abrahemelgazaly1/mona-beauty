@@ -29,6 +29,7 @@ export default async function handler(req, res) {
         images: body.images,
         description: body.description,
         usage: body.usage,
+        productComponents: body.productComponents,
         soldOut: body.soldOut,
       });
       if (!updated) return json(res, 404, { error: "Not found" });
