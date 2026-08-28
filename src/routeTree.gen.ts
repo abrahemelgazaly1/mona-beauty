@@ -9,173 +9,48 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as WishlistRouteImport } from './routes/wishlist'
-import { Route as ProductsRouteImport } from './routes/products'
-import { Route as CheckoutRouteImport } from './routes/checkout'
-import { Route as CartRouteImport } from './routes/cart'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as AdminIndexRouteImport } from './routes/admin/index'
-import { Route as ProductsIdRouteImport } from './routes/products.$id'
-import { Route as CategorySlugRouteImport } from './routes/category.$slug'
-import { Route as AdminLoginRouteImport } from './routes/admin/login'
+import { Route as MenuRouteImport } from './routes/menu'
 
-const WishlistRoute = WishlistRouteImport.update({
-  id: '/wishlist',
-  path: '/wishlist',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ProductsRoute = ProductsRouteImport.update({
-  id: '/products',
-  path: '/products',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const CheckoutRoute = CheckoutRouteImport.update({
-  id: '/checkout',
-  path: '/checkout',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const CartRoute = CartRouteImport.update({
-  id: '/cart',
-  path: '/cart',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const AdminIndexRoute = AdminIndexRouteImport.update({
-  id: '/admin/',
-  path: '/admin/',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ProductsIdRoute = ProductsIdRouteImport.update({
-  id: '/$id',
-  path: '/$id',
-  getParentRoute: () => ProductsRoute,
-} as any)
-const CategorySlugRoute = CategorySlugRouteImport.update({
-  id: '/category/$slug',
-  path: '/category/$slug',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AdminLoginRoute = AdminLoginRouteImport.update({
-  id: '/admin/login',
-  path: '/admin/login',
+const MenuRoute = MenuRouteImport.update({
+  id: '/menu',
+  path: '/menu',
   getParentRoute: () => rootRouteImport,
 } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/cart': typeof CartRoute
-  '/checkout': typeof CheckoutRoute
-  '/products': typeof ProductsRouteWithChildren
-  '/wishlist': typeof WishlistRoute
-  '/admin/login': typeof AdminLoginRoute
-  '/category/$slug': typeof CategorySlugRoute
-  '/products/$id': typeof ProductsIdRoute
-  '/admin/': typeof AdminIndexRoute
+  '/menu': typeof MenuRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/cart': typeof CartRoute
-  '/checkout': typeof CheckoutRoute
-  '/products': typeof ProductsRouteWithChildren
-  '/wishlist': typeof WishlistRoute
-  '/admin/login': typeof AdminLoginRoute
-  '/category/$slug': typeof CategorySlugRoute
-  '/products/$id': typeof ProductsIdRoute
-  '/admin': typeof AdminIndexRoute
+  '/menu': typeof MenuRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/cart': typeof CartRoute
-  '/checkout': typeof CheckoutRoute
-  '/products': typeof ProductsRouteWithChildren
-  '/wishlist': typeof WishlistRoute
-  '/admin/login': typeof AdminLoginRoute
-  '/category/$slug': typeof CategorySlugRoute
-  '/products/$id': typeof ProductsIdRoute
-  '/admin/': typeof AdminIndexRoute
+  '/menu': typeof MenuRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths:
-    | '/'
-    | '/cart'
-    | '/checkout'
-    | '/products'
-    | '/wishlist'
-    | '/admin/login'
-    | '/category/$slug'
-    | '/products/$id'
-    | '/admin/'
+  fullPaths: '/' | '/menu'
   fileRoutesByTo: FileRoutesByTo
-  to:
-    | '/'
-    | '/cart'
-    | '/checkout'
-    | '/products'
-    | '/wishlist'
-    | '/admin/login'
-    | '/category/$slug'
-    | '/products/$id'
-    | '/admin'
-  id:
-    | '__root__'
-    | '/'
-    | '/cart'
-    | '/checkout'
-    | '/products'
-    | '/wishlist'
-    | '/admin/login'
-    | '/category/$slug'
-    | '/products/$id'
-    | '/admin/'
+  to: '/' | '/menu'
+  id: '__root__' | '/' | '/menu'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  CartRoute: typeof CartRoute
-  CheckoutRoute: typeof CheckoutRoute
-  ProductsRoute: typeof ProductsRouteWithChildren
-  WishlistRoute: typeof WishlistRoute
-  AdminLoginRoute: typeof AdminLoginRoute
-  CategorySlugRoute: typeof CategorySlugRoute
-  AdminIndexRoute: typeof AdminIndexRoute
+  MenuRoute: typeof MenuRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/wishlist': {
-      id: '/wishlist'
-      path: '/wishlist'
-      fullPath: '/wishlist'
-      preLoaderRoute: typeof WishlistRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/products': {
-      id: '/products'
-      path: '/products'
-      fullPath: '/products'
-      preLoaderRoute: typeof ProductsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/checkout': {
-      id: '/checkout'
-      path: '/checkout'
-      fullPath: '/checkout'
-      preLoaderRoute: typeof CheckoutRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/cart': {
-      id: '/cart'
-      path: '/cart'
-      fullPath: '/cart'
-      preLoaderRoute: typeof CartRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/': {
       id: '/'
       path: '/'
@@ -183,58 +58,19 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/admin/': {
-      id: '/admin/'
-      path: '/admin'
-      fullPath: '/admin/'
-      preLoaderRoute: typeof AdminIndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/products/$id': {
-      id: '/products/$id'
-      path: '/$id'
-      fullPath: '/products/$id'
-      preLoaderRoute: typeof ProductsIdRouteImport
-      parentRoute: typeof ProductsRoute
-    }
-    '/category/$slug': {
-      id: '/category/$slug'
-      path: '/category/$slug'
-      fullPath: '/category/$slug'
-      preLoaderRoute: typeof CategorySlugRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/admin/login': {
-      id: '/admin/login'
-      path: '/admin/login'
-      fullPath: '/admin/login'
-      preLoaderRoute: typeof AdminLoginRouteImport
+    '/menu': {
+      id: '/menu'
+      path: '/menu'
+      fullPath: '/menu'
+      preLoaderRoute: typeof MenuRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
 }
 
-interface ProductsRouteChildren {
-  ProductsIdRoute: typeof ProductsIdRoute
-}
-
-const ProductsRouteChildren: ProductsRouteChildren = {
-  ProductsIdRoute: ProductsIdRoute,
-}
-
-const ProductsRouteWithChildren = ProductsRoute._addFileChildren(
-  ProductsRouteChildren,
-)
-
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  CartRoute: CartRoute,
-  CheckoutRoute: CheckoutRoute,
-  ProductsRoute: ProductsRouteWithChildren,
-  WishlistRoute: WishlistRoute,
-  AdminLoginRoute: AdminLoginRoute,
-  CategorySlugRoute: CategorySlugRoute,
-  AdminIndexRoute: AdminIndexRoute,
+  MenuRoute: MenuRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
