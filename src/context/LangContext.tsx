@@ -18,11 +18,21 @@ const LangContext = createContext<LangCtx | null>(null);
 const LANG_KEY = "mona_lang";
 
 export function LangProvider({ children }: { children: ReactNode }) {
-  const [lang, setLangState] = useState<Lang>("en");
+  const [lang, setLangState] = useState<Lang>("ar");
 
   useEffect(() => {
     const saved = localStorage.getItem(LANG_KEY) as Lang | null;
-    if (saved === "ar" || saved === "en") setLangState(saved);
+    // Default to Arabic if nothing is saved
+    if (!saved) {
+      setLangState("ar");
+      localStorage.setItem(LANG_KEY, "ar");
+    } else if (saved === "ar" || saved === "en") {
+      setLangState(saved);
+    } else {
+      // Invalid saved value, reset to Arabic
+      setLangState("ar");
+      localStorage.setItem(LANG_KEY, "ar");
+    }
   }, []);
 
   const setLang = (l: Lang) => {

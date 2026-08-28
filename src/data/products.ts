@@ -10,6 +10,7 @@ export type Product = {
   images: string[];
   description: string;
   usage: string;
+  productComponents?: string;
   soldOut?: boolean;
   bestSeller?: boolean;
 };

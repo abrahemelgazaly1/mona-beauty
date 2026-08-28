@@ -158,6 +158,9 @@ function AddProductTab({
     editProduct?.description ?? "",
   );
   const [usage, setUsage] = useState(editProduct?.usage ?? "");
+  const [productComponents, setProductComponents] = useState(
+    editProduct?.productComponents ?? "",
+  );
   const [categorySlug, setCategorySlug] = useState(
     editProduct?.categorySlug ?? "",
   );
@@ -241,6 +244,7 @@ function AddProductTab({
         price: Number(price),
         description,
         usage,
+        productComponents,
         categorySlug,
         category: cat?.name ?? categorySlug,
         images,
@@ -318,6 +322,19 @@ function AddProductTab({
           rows={2}
           className="w-full border border-border bg-transparent px-4 py-3 text-sm outline-none focus:border-primary resize-none"
           placeholder="Usage instructions..."
+        />
+      </div>
+
+      <div>
+        <label className="mb-2 block text-xs uppercase tracking-[0.25em] text-muted-foreground">
+          Product Components
+        </label>
+        <textarea
+          value={productComponents}
+          onChange={(e) => setProductComponents(e.target.value)}
+          rows={3}
+          className="w-full border border-border bg-transparent px-4 py-3 text-sm outline-none focus:border-primary resize-none"
+          placeholder="Product components/ingredients..."
         />
       </div>
 

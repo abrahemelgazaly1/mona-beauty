@@ -55,6 +55,7 @@ function ProductDetail() {
   const [slide, setSlide] = useState(0);
   const [qty, setQty] = useState(1);
   const [descOpen, setDescOpen] = useState(true);
+  const [componentsOpen, setComponentsOpen] = useState(false);
 
   const isWished = wishlist.includes(product.id);
 
@@ -172,6 +173,31 @@ function ProductDetail() {
                 </p>
               </div>
             </div>
+
+            {/* Product Components */}
+            {product.productComponents && (
+              <>
+                <button
+                  onClick={() => setComponentsOpen((o) => !o)}
+                  className="mt-6 flex w-full items-center justify-between border-b border-border pb-4 text-xs uppercase tracking-[0.3em]"
+                >
+                  {t("detail_product_components")}
+                  <ChevronDown
+                    className={`h-4 w-4 transition-transform duration-300 ${componentsOpen ? "rotate-180" : ""}`}
+                    strokeWidth={1.5}
+                  />
+                </button>
+                <div
+                  className={`grid overflow-hidden transition-all duration-500 ${componentsOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}
+                >
+                  <div className="min-h-0">
+                    <p className="pt-4 text-sm leading-relaxed text-muted-foreground whitespace-pre-line">
+                      {product.productComponents}
+                    </p>
+                  </div>
+                </div>
+              </>
+            )}
 
             {/* Quantity */}
             {!product.soldOut && (
