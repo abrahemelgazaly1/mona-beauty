@@ -5,7 +5,7 @@ import type { Product } from "@/data/products";
 import { useLang } from "@/context/LangContext";
 
 export function ProductsMarquee() {
-  const { t } = useLang();
+  const { t, isRTL } = useLang();
   const [items, setItems] = useState<Product[]>([]);
   const [loading, setLoading] = useState(true);
 
@@ -16,8 +16,8 @@ export function ProductsMarquee() {
       .finally(() => setLoading(false));
   }, []);
 
-  // Need at least 1 product to show; duplicate for infinite scroll
-  const loop = items.length > 0 ? [...items, ...items] : [];
+  // Duplicate items multiple times for smooth infinite scroll (at least 3 copies)
+  const loop = items.length > 0 ? [...items, ...items, ...items, ...items] : [];
 
   return (
     <section className="overflow-hidden py-24">
@@ -53,14 +53,20 @@ export function ProductsMarquee() {
       )}
 
       {!loading && loop.length > 0 && (
-        <div className="group relative">
-          <div className="flex w-max animate-marquee-slow gap-6 px-6">
+        <div className="group relative overflow-hidden">
+          <div 
+            className={`flex w-max gap-6 px-6 hover:[animation-play-state:paused] ${
+              isRTL ? 'animate-marquee-slow-rtl' : 'animate-marquee-slow'
+            }`}
+            style={isRTL ? { direction: 'ltr' } : undefined}
+          >
             {loop.map((p, i) => (
               <Link
                 key={`${p.id}-${i}`}
                 to="/products/$id"
                 params={{ id: p.id }}
                 className="w-[280px] shrink-0 md:w-[340px]"
+                style={isRTL ? { direction: 'rtl' } : undefined}
               >
                 <div className="aspect-[4/5] overflow-hidden bg-secondary">
                   <img
