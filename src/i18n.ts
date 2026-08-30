@@ -8,6 +8,7 @@ export const translations = {
     // Navbar
     nav_wishlist: "Wishlist",
     nav_cart: "Cart",
+    navbar_tagline: "You'll always find us close to your beauty",
 
     // Hero
     hero_est: "Est. 2019 — Al-Gharbia",
@@ -210,6 +211,7 @@ export const translations = {
     // Navbar
     nav_wishlist: "المفضلة",
     nav_cart: "السلة",
+    navbar_tagline: "ستجدنا دائماً بالقرب من جمالك",
 
     // Hero
     hero_est: "منذ 2019 — الغربية",
