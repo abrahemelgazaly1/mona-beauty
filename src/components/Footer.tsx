@@ -63,10 +63,10 @@ export function Footer() {
             <ul className="mt-4 space-y-3 text-sm text-muted-foreground">
               <li>
                 <a
-                  href="tel:+201272828240"
+                  href="tel:+201063775592"
                   className="hover:text-foreground transition-colors"
                 >
-                  01272828240
+                  01063775592
                 </a>
               </li>
               <li className="leading-relaxed">

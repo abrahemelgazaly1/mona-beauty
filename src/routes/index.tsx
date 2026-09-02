@@ -304,34 +304,32 @@ function Home() {
         </div>
       </section>
 
-      {/* SERVICES */}
+      {/* PRODUCTS SECTION */}
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-24">
         <div className="mb-10 text-center sm:mb-14">
           <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground">
-            {t("services_label")}
+            {t("products_section_label")}
           </p>
           <h2 className="mt-3 font-display text-4xl md:text-6xl">
-            {t("services_title")}
+            {t("products_section_title")}
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-muted-foreground">
-            {t("services_sub")}
+            {t("products_section_sub")}
           </p>
         </div>
 
         <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
           {(
             [
-              { key: "manicure", icon: "💅" },
-              { key: "pedicure", icon: "🦶" },
-              { key: "scalp", icon: "🌱" },
-              { key: "hair", icon: "✂️" },
-              { key: "protein", icon: "💊" },
-              { key: "iron", icon: "🔥" },
-              { key: "color", icon: "🎨" },
-              { key: "blowdry", icon: "💨" },
-              { key: "skin", icon: "🌿" },
-              { key: "bride", icon: "👰" },
-              { key: "makeup", icon: "💄" },
+              { key: "hair_protein", icon: "💊" },
+              { key: "keratin", icon: "✨" },
+              { key: "shampoo", icon: "🧴" },
+              { key: "serum", icon: "💧" },
+              { key: "cream", icon: "🧈" },
+              { key: "perfume", icon: "🌸" },
+              { key: "mask", icon: "🎭" },
+              { key: "conditioner", icon: "💆" },
+              { key: "hair_oil", icon: "🌿" },
             ] as { key: string; icon: string }[]
           ).map(({ key, icon }, i) => (
             <div
@@ -341,10 +339,10 @@ function Home() {
             >
               <div className="mb-4 text-3xl">{icon}</div>
               <h3 className="font-display text-xl">
-                {t(`svc_${key}_title` as Parameters<typeof t>[0])}
+                {t(`product_${key}_title` as Parameters<typeof t>[0])}
               </h3>
               <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                {t(`svc_${key}_desc` as Parameters<typeof t>[0])}
+                {t(`product_${key}_desc` as Parameters<typeof t>[0])}
               </p>
             </div>
           ))}
@@ -353,14 +351,14 @@ function Home() {
         {/* CTA */}
         <div className="mt-14 border-t border-border pt-12 text-center">
           <p className="mx-auto max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-            {t("svc_cta")}
+            {t("products_cta")}
           </p>
-          <a
-            href="tel:+201272828240"
+          <Link
+            to="/products"
             className="mt-8 inline-flex items-center gap-3 border border-primary bg-primary px-10 py-4 text-xs uppercase tracking-[0.35em] text-primary-foreground transition-opacity hover:opacity-85"
           >
-            {t("svc_contact_btn")}
-          </a>
+            {t("products_cta_btn")}
+          </Link>
         </div>
       </section>
 

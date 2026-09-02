@@ -160,6 +160,41 @@ export const translations = {
 
     // Admin — not translated (admin stays English)
 
+    // Products Section (replacing Services)
+    products_section_label: "What We Offer",
+    products_section_title: "Egyptian Beauty Products",
+    products_section_sub: "Premium beauty products crafted with care in Egypt — trusted by customers nationwide for quality and results.",
+    
+    product_hair_protein_title: "Hair Protein",
+    product_hair_protein_desc: "Intensive protein treatment that rebuilds damaged hair structure, restores strength, and brings back natural shine.",
+    
+    product_keratin_title: "Keratin Treatment",
+    product_keratin_desc: "Professional keratin formula that smooths frizz, eliminates damage, and leaves hair silky for weeks.",
+    
+    product_shampoo_title: "Nourishing Shampoo",
+    product_shampoo_desc: "Gentle cleansing shampoo enriched with natural ingredients to nourish and strengthen every strand.",
+    
+    product_serum_title: "Hair Serum",
+    product_serum_desc: "Lightweight finishing serum that adds mirror-like shine, tames flyaways, and protects from heat damage.",
+    
+    product_cream_title: "Hair Cream",
+    product_cream_desc: "Deep conditioning cream that hydrates, softens, and repairs dry or chemically-treated hair.",
+    
+    product_perfume_title: "Hair Perfume",
+    product_perfume_desc: "Long-lasting hair fragrance with a luxurious scent that keeps your hair smelling fresh all day.",
+    
+    product_mask_title: "Hair Mask",
+    product_mask_desc: "Intensive weekly treatment mask that deeply repairs, moisturizes, and revitalizes damaged hair.",
+    
+    product_conditioner_title: "Conditioner",
+    product_conditioner_desc: "Smoothing conditioner that detangles, softens, and adds shine without weighing hair down.",
+    
+    product_hair_oil_title: "Natural Hair Oil",
+    product_hair_oil_desc: "Pure nourishing oil blend that strengthens roots, promotes growth, and adds natural luster.",
+    
+    products_cta: "All our products are made with love in Egypt — quality you can trust, results you can see. Shop now and discover the difference.",
+    products_cta_btn: "Shop Products",
+
     // Services
     services_label: "What We Offer",
     services_title: "Our Services.",
@@ -359,6 +394,41 @@ export const translations = {
     quick_quantity: "الكمية",
     quick_add: "أضف للسلة",
     quick_checkout: "إتمام الشراء",
+
+    // Products Section (replacing Services)
+    products_section_label: "ما نقدمه",
+    products_section_title: "منتجات تجميل مصرية",
+    products_section_sub: "منتجات تجميل فاخرة مصنوعة بعناية في مصر — موثوقة من العملاء في جميع أنحاء الجمهورية للجودة والنتائج.",
+    
+    product_hair_protein_title: "بروتين الشعر",
+    product_hair_protein_desc: "علاج بروتين مكثف يعيد بناء بنية الشعر التالف ويعيد القوة واللمعان الطبيعي.",
+    
+    product_keratin_title: "كيراتين",
+    product_keratin_desc: "تركيبة كيراتين احترافية تنعّم التجعد وتزيل التلف وتترك الشعر حريري لأسابيع.",
+    
+    product_shampoo_title: "شامبو مغذي",
+    product_shampoo_desc: "شامبو تنظيف لطيف مُعزز بمكونات طبيعية لتغذية وتقوية كل خصلة.",
+    
+    product_serum_title: "سيروم للشعر",
+    product_serum_desc: "سيروم نهائي خفيف يضيف لمعة كالمرآة ويروض التطاير ويحمي من أضرار الحرارة.",
+    
+    product_cream_title: "كريم للشعر",
+    product_cream_desc: "كريم ترطيب عميق يرطب وينعم ويصلح الشعر الجاف أو المعالج كيميائياً.",
+    
+    product_perfume_title: "معطر للشعر",
+    product_perfume_desc: "عطر شعر طويل الأمد برائحة فاخرة تحافظ على انتعاش شعرك طوال اليوم.",
+    
+    product_mask_title: "ماسك للشعر",
+    product_mask_desc: "ماسك علاج مكثف أسبوعي يصلح ويرطب ويجدد الشعر التالف بعمق.",
+    
+    product_conditioner_title: "بلسم",
+    product_conditioner_desc: "بلسم ملطف يفك التشابك وينعم ويضيف لمعة دون إثقال الشعر.",
+    
+    product_hair_oil_title: "زيت شعر طبيعي",
+    product_hair_oil_desc: "مزيج زيت مغذي نقي يقوي الجذور ويعزز النمو ويضيف بريق طبيعي.",
+    
+    products_cta: "جميع منتجاتنا مصنوعة بحب في مصر — جودة تثق بها، ونتائج تراها. تسوق الآن واكتشف الفرق.",
+    products_cta_btn: "تسوق المنتجات",
 
     // Services
     services_label: "ما نقدّمه",
